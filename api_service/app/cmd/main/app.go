@@ -3,6 +3,7 @@ package main
 import (
 	"github.com/VasilyGorbunov/notes_system/api_service/internal/config"
 	"github.com/VasilyGorbunov/notes_system/api_service/pkg/logging"
+	"github.com/julienschmidt/httprouter"
 )
 
 func main() {
@@ -11,5 +12,9 @@ func main() {
 	logger.Println("logger initialized")
 
 	logger.Println("config initializing")
-	cfg := config.GetConfig()
+	//cfg := config.GetConfig()
+	_ = config.GetConfig()
+
+	logger.Println("router initializing")
+	_ = httprouter.New()
 }
